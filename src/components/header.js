@@ -12,6 +12,7 @@ const Header = (title, date, temp) => {
   date.classList.add('date')
   temp.classList.add('temp')
 
+  title.textContent = title
   date.textContent = date
   temp.textContent = temp
 
@@ -30,8 +31,10 @@ const Header = (title, date, temp) => {
   return header
 }
 
+const headEntry = document.querySelector('.header-container')
+
 const headerAppender = (selector) => {
-  const headEntry = document.querySelector('.header-container')
+  
   headEntry.appendChild(Header(title, date, temp))
   for (i = 0; i < selector.length; i++) {
     headEntry.appendChild(Header(selector[i]));
